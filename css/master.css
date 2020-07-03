@@ -25,7 +25,6 @@ h1{
   width: 500px;
   margin: 0 10px;
   vertical-align: middle;
-  background-color: red;
 }
 
 .images img{
@@ -34,7 +33,7 @@ h1{
 }
 
 .images img.active{
-  display: inline-block;
+  display: block;
 }
 
 .nav {
