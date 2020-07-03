@@ -18,6 +18,22 @@ $(document).ready(function(){
     }
   });
 
+
+  // ---------------  BONUS -------------
+
+  $(".nav i").click( function(){
+    console.log($(this).index());
+    var indice = $(this).index(); //salvo l'indice del pallino cliccato in una variabile. In teoria la funzione index restituisce l'indice di un elemento html tipo array. un numero che indentifica nell html in che posizione l'elemento selezionato è rispetto ai suoi fratelli. si parte a contare da 0
+
+    //rimuovo la classe active da immagine e pallino attualmente attivi
+    $(".images img.active").removeClass("active");
+    $(".slider-wrapper .nav .fa-circle.active").removeClass("active");
+
+    // do la classe active al pallino cliccato
+    $(this).addClass("active");
+    $(".images img").eq(indice).addClass("active"); // eq seleziona un elemento per indice. quindi dandogli l'indice del pallino cliccato seleziona l'immagine con indice corrispondente
+  });
+
 });
 
 
