@@ -31,7 +31,18 @@ $(document).ready(function(){
 
     // do la classe active al pallino cliccato
     $(this).addClass("active");
-    $(".images img").eq(indice).addClass("active"); // eq seleziona un elemento per indice. quindi dandogli l'indice del pallino cliccato seleziona l'immagine con indice corrispondente
+
+    //$(".images img").eq(indice).addClass("active");
+    // eq seleziona un elemento per indice. quindi dandogli l'indice del pallino cliccato seleziona l'immagine con indice corrispondente
+
+    // altro modo per selezionare l'immagine è il selettore css nth-child. per dare una variabile al posto di nth si mette tra virgolette (per interrompere la stringa) e tra due "+"
+
+    $(".images > img:nth-child(" + (indice + 1) + ")").addClass("active"); // +1 perchè indice parte da 0 mentre nth-child conta da 1
+
+    // si può utilizzare anche .get() che funziona come .eq() ma .get() restituisce solo il tag html .eq() restituisce un oggetto jquery (su cui quindi si possono fare al tre operazioni). Per fare altre operazioni su tag trovati con .get() bisognerebbe rimetterli in $().
+
+    //$(".images img").get(indice).addClass("active");
+    
   });
 
 });
